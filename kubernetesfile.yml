@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: healthcare
-          image: mowazzemali/star-agile-health-care:1
+          image: mowazzemali/star-agile-health-care:v1
           ports:
             - containerPort: 8082
           env:
