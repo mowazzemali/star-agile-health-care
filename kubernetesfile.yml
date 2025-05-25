@@ -2,34 +2,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Healthcare
+  name: medcure
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Healthcare
+      app: medcure
   template:
     metadata:
       labels:
-        app: Healthcare
+        app: medcure
     spec:
       containers:
-        - name: Healthcare
+        - name: healthcare
           image: mowazzemali/star-agile-health-care:1
           ports:
-            - containerPort: 8081
+            - containerPort: 8082
           env:
             - name: PORT
-              value: "8081"
+              value: "8082"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: Healthcare
+  name: medcure
 spec:
   type: NodePort
   ports:
-    - port: 8081
-      targetPort: 8081
+    - port: 8082
+      targetPort: 8082
   selector:
-    app: Healthcare
+    app:medcure
