@@ -2,16 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: medcure
+  name: medicure
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: medcure
+      app: medicure
   template:
     metadata:
       labels:
-        app: medcure
+        app: medicure
     spec:
       containers:
         - name: healthcare
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: medcure
+  name: medicure
 spec:
   type: NodePort
   ports:
     - port: 8082
       targetPort: 8082
   selector:
-    app:medcure
+    app:medicure
